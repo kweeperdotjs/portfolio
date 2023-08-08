@@ -1,3 +1,4 @@
+
 var input = document.getElementById('main');
 var response = document.getElementById('response');
 var i = 0
@@ -177,6 +178,11 @@ function refreshEventListener() {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
+	const isMobile = navigator.userAgentData.mobile;
+	if (isMobile) {
+		alert("Your device is not supported. You will be redirected to the UI version")
+		location.replace("/ui.html")
+	}
   document.addEventListener('keydown', handleprompts);
 
 });
