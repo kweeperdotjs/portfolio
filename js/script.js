@@ -4,7 +4,7 @@ var i = 0
 var txt = "Welcome to Kweeper's portfolio."
 var speed = 30
 var commands = ["help", "about", "contact", "source", "skills", "ui"]
-var responses = ["Here is a list of commands:<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>help</span> - Displays this menu.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>about</span> - Tells you about me.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>contact</span> - Get information on how to contact me.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>source</span> - Redirects you to the source of this web page.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>skills</span> - Shows you my skills in programming.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>ui</span> - Redirects to the UI version of this page..<br>List of extra commands:<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>clear</span> - Clears the terminal.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>echo</span> [input] - Echos your input back.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>quote</span> - Gets a random quote from the internet.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>rps</span> [choice] - Plays rock paper scissors with you (the output is completely random)", "About Me:<br>Hello, visitor! My name is Kweeper, and I'm a passionate programmer who has been on an exciting coding journey since 2019.<br>", "Contact info:<br>&nbsp&nbsp&nbsp&nbspEmail - kweeper@protonmail.com<br>&nbsp&nbsp&nbsp&nbspDiscord - kweeper<br>&nbsp&nbsp&nbsp&nbspTelegram - t.me/NotKweeper<br>&nbsp&nbsp&nbsp&nbspV3rm - MentalBreakdown<br>&nbsp&nbsp&nbsp&nbspGithub - kweeperdotjs"]
+var responses = ["Here is a list of commands:<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>help</span> - Displays this menu.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>about</span> - Tells you about me.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>contact</span> - Get information on how to contact me.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>source</span> - Redirects you to the source of this web page.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>ui</span> - Redirects to the UI version of this page..<br>List of extra commands:<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>clear</span> - Clears the terminal.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>echo</span> [input] - Echos your input back.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>quote</span> - Gets a random quote from the internet.<br>&nbsp&nbsp&nbsp&nbsp<span class='highlight'>rps</span> [choice] - Plays rock paper scissors with you (the output is completely random)", "About Me:<br>Hello, visitor! My name is Kweeper, and I'm a passionate programmer who has been on an exciting coding journey since 2019.<br>", "Contact info:<br>&nbsp&nbsp&nbsp&nbspEmail - kweeper@protonmail.com<br>&nbsp&nbsp&nbsp&nbspDiscord - kweeper<br>&nbsp&nbsp&nbsp&nbspTelegram - t.me/NotKweeper<br>&nbsp&nbsp&nbsp&nbspV3rm - MentalBreakdown<br>&nbsp&nbsp&nbsp&nbspGithub - kweeperdotjs"]
 function wait(ms){
    var start = new Date().getTime();
    var end = start;
@@ -78,6 +78,10 @@ function ui() {
   response.innerHTML = `Redirecting...`;
 	window.open('/ui.html', '_blank')
 }
+function source() {
+  response.innerHTML = `Redirecting...`;
+	window.open('https://github.com/kweeperdotjs/portfolio', '_blank')
+}
 function typeWriter(callback) {
   console.log(txt.length)
   if (i < txt.length) {
@@ -139,6 +143,8 @@ function handleprompts(event) {
 				echo(sen)
 			} else if(input.value == "quote"){
 				quote()
+			} else if(input.value == "source"){
+				source()
 			} else {
         unknown(input.value)
       }
